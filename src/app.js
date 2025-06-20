@@ -6,7 +6,7 @@ import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
 const generarCarta = () => {
-  const numeroAlAzar = (array) => {
+  const numeroAlAzar = array => {
     return array[Math.floor(Math.random() * array.length)];
   };
 
@@ -24,7 +24,7 @@ const generarCarta = () => {
     "10",
     "J",
     "Q",
-    "K",
+    "K"
   ];
 
   let colores = ["red", "green", "black", "blue"];
@@ -53,12 +53,12 @@ const generarCarta = () => {
   figuraAbajo.style.color = figura.style.color;
 
   let listaNumeros = document.getElementsByClassName("numeros");
-  Array.from(listaNumeros).forEach((numero) => {
+  Array.from(listaNumeros).forEach(numero => {
     numero.innerText = numeroAlAzar(numeros);
     numero.style.color = figura.style.color;
   });
 };
 window.generarCarta = generarCarta;
-window.onload = function () {
+window.onload = function() {
   generarCarta();
 };
